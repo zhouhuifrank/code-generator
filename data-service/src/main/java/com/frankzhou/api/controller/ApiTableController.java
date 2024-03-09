@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author This.FrankZhou
  * @version 1.0
- * @description api分组管理
- * @date 2024-03-09
+ * @description 数据表管理
+ * @date 2024-03-10
  */
 @RestController
-@RequestMapping("/api/group")
-public class ApiGroupController {
+@RequestMapping("/table")
+public class ApiTableController {
 }
