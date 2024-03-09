@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: intelligence-bi
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /intelligenceBi
