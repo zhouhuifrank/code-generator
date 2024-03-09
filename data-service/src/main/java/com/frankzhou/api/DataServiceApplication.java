@@ -1,4 +1,4 @@
-package com.frankzhou.data.sync;
+package com.frankzhou.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @SpringBootApplication
-public class DataSyncApplication {
+public class DataServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DataSyncApplication.class, args);
-        log.info("===============Real Time Data Sync Start Success==============");
+        SpringApplication.run(DataServiceApplication.class, args);
+        log.info("==========Data Service Start Success==========");
     }
 
 }
