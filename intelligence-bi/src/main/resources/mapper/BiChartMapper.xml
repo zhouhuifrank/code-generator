@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.intelligence.bi.mapper.BiChartMapper">
+
+    <resultMap id="BaseResultMap" type="com.frankzhou.intelligence.bi.domain.entity.BiChart">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="chart_no" column="chart_no" jdbcType="VARCHAR"/>
+            <result property="chart_name" column="chart_name" jdbcType="VARCHAR"/>
+            <result property="analysis_goal" column="analysis_goal" jdbcType="VARCHAR"/>
+            <result property="input_data" column="input_data" jdbcType="VARCHAR"/>
+            <result property="chart_type" column="chart_type" jdbcType="VARCHAR"/>
+            <result property="analysis_result" column="analysis_result" jdbcType="VARCHAR"/>
+            <result property="result_data" column="result_data" jdbcType="VARCHAR"/>
+            <result property="create_user" column="create_user" jdbcType="VARCHAR"/>
+            <result property="update_user" column="update_user" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,chart_no,chart_name,
+        analysis_goal,input_data,chart_type,
+        analysis_result,result_data,create_user,
+        update_user,create_time,update_time,
+        status
+    </sql>
+</mapper>
