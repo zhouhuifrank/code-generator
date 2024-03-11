@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author This.FrankZhou
  * @version 1.0
- * @description 系统主页
+ * @description Bi智能分析主页
  * @date 2024-03-10
  */
 @RestController

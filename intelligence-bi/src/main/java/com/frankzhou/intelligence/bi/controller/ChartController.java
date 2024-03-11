@@ -3,7 +3,7 @@ package com.frankzhou.intelligence.bi.controller;
 /**
  * @author This.FrankZhou
  * @version 1.0
- * @description
+ * @description BI分析和图表管理
  * @date 2024-03-01
  */
 public class ChartController {
