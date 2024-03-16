@@ -6,20 +6,21 @@
 
     <resultMap id="BaseResultMap" type="com.frankzhou.intelligence.bi.domain.entity.BiData">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="table_no" column="table_no" jdbcType="VARCHAR"/>
-            <result property="table_name_en" column="table_name_en" jdbcType="VARCHAR"/>
-            <result property="table_name_cn" column="table_name_cn" jdbcType="VARCHAR"/>
-            <result property="create_user" column="create_user" jdbcType="VARCHAR"/>
-            <result property="update_user" column="update_user" jdbcType="VARCHAR"/>
-            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="tableNo" column="table_no" jdbcType="VARCHAR"/>
+            <result property="tableNameEn" column="table_name_en" jdbcType="VARCHAR"/>
+            <result property="tableNameCn" column="table_name_cn" jdbcType="VARCHAR"/>
+            <result property="dataFileNo" column="data_file_no" jdbcType="VARCHAR"/>
+            <result property="importStatus" column="import_status" jdbcType="INTEGER"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,table_no,table_name_en,
-        table_name_cn,create_user,update_user,
-        create_time,update_time,status,
-        data_file_no
+        id,table_no,table_name_en,table_name_cn,data_file_no,import_status,
+        create_user,update_user,create_time,update_time,status
     </sql>
+
 </mapper>

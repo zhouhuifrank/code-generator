@@ -4,27 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.frankzhou.intelligence.bi.mapper.BiChartMapper">
 
-    <resultMap id="BaseResultMap" type="com.frankzhou.intelligence.bi.domain.entity.BiChart">
+    <resultMap id="chartMap" type="com.frankzhou.intelligence.bi.domain.entity.BiChart">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="chart_no" column="chart_no" jdbcType="VARCHAR"/>
-            <result property="chart_name" column="chart_name" jdbcType="VARCHAR"/>
-            <result property="analysis_goal" column="analysis_goal" jdbcType="VARCHAR"/>
-            <result property="input_data" column="input_data" jdbcType="VARCHAR"/>
-            <result property="chart_type" column="chart_type" jdbcType="VARCHAR"/>
-            <result property="analysis_result" column="analysis_result" jdbcType="VARCHAR"/>
-            <result property="result_data" column="result_data" jdbcType="VARCHAR"/>
-            <result property="create_user" column="create_user" jdbcType="VARCHAR"/>
-            <result property="update_user" column="update_user" jdbcType="VARCHAR"/>
-            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="chartNo" column="chart_no" jdbcType="VARCHAR"/>
+            <result property="chartName" column="chart_name" jdbcType="VARCHAR"/>
+            <result property="analysisGoal" column="analysis_goal" jdbcType="VARCHAR"/>
+            <result property="tableNo" column="table_no" jdbcType="VARCHAR"/>
+            <result property="chartType" column="chart_type" jdbcType="VARCHAR"/>
+            <result property="analysisResult" column="analysis_result" jdbcType="VARCHAR"/>
+            <result property="resultData" column="result_data" jdbcType="VARCHAR"/>
+            <result property="chartStatus" column="chart_status" jdbcType="INTEGER"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,chart_no,chart_name,
-        analysis_goal,input_data,chart_type,
-        analysis_result,result_data,create_user,
-        update_user,create_time,update_time,
-        status
+    <sql id="baseColumn">
+        id,chart_no,chart_name,analysis_goal,table_no,chart_type,analysis_result,
+        result_data,chart_status,create_user,update_user,create_time,update_time,status
     </sql>
+
 </mapper>

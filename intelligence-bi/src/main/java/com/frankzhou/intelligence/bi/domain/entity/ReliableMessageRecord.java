@@ -11,12 +11,12 @@ import lombok.Data;
 /**
  * @author This.FrankZhou
  * @version 1.0
- * @description BI用户上传数据实体类
+ * @description 可靠消息记录实体类
  * @date 2024-03-01
  */
-@TableName(value ="bi_data")
+@TableName(value ="reliable_message_record")
 @Data
-public class BiData implements Serializable {
+public class ReliableMessageRecord implements Serializable {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -27,45 +27,46 @@ public class BiData implements Serializable {
     private Long id;
 
     /**
-     * 表编号
+     * 消息类型
      */
-    @TableField(value = "table_no")
-    private String tableNo;
+    @TableField(value = "message_type")
+    private String messageType;
 
     /**
-     * 表英文名
+     * 方法消息体
      */
-    @TableField(value = "table_name_en")
-    private String tableNameEn;
+    @TableField(value = "message_json")
+    private String messageJson;
 
     /**
-     * 表中文名
+     * 消息状态
      */
-    @TableField(value = "table_name_cn")
-    private String tableNameCn;
+    @TableField(value = "message_status")
+    private Integer messageStatus;
 
     /**
-     * 数据文件编号
+     * 下次重试时间
      */
-    @TableField(value = "data_file_no")
-    private String dataFileNo;
+    @TableField(value = "next_retry_time")
+    private Date nextRetryTime;
 
     /**
-     * 数据导入状态
+     * 重试次数
      */
-    private Integer importStatus;
+    @TableField(value = "retry_count")
+    private Integer retryCount;
 
     /**
-     * 创建人
+     * 最大重试次数
      */
-    @TableField(value = "create_user")
-    private String createUser;
+    @TableField(value = "max_retry_count")
+    private Integer maxRetryCount;
 
     /**
-     * 更新人
+     * 失败原因
      */
-    @TableField(value = "update_user")
-    private String updateUser;
+    @TableField(value = "fail_reason")
+    private String failReason;
 
     /**
      * 创建时间

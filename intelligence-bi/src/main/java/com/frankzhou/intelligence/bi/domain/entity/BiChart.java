@@ -9,12 +9,17 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 
- * @TableName bi_chart
+ * @author This.FrankZhou
+ * @version 1.0
+ * @description bi图表实体类
+ * @date 2024-03-01
  */
 @TableName(value ="bi_chart")
 @Data
 public class BiChart implements Serializable {
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
+
     /**
      * 自增id
      */
@@ -25,74 +30,77 @@ public class BiChart implements Serializable {
      * 图表编号
      */
     @TableField(value = "chart_no")
-    private String chart_no;
+    private String chartNo;
 
     /**
      * 图表名称
      */
     @TableField(value = "chart_name")
-    private String chart_name;
+    private String chartName;
 
     /**
      * 分析目标
      */
     @TableField(value = "analysis_goal")
-    private String analysis_goal;
+    private String analysisGoal;
 
     /**
-     * 输入数据
+     * 关联数据表编号
      */
-    @TableField(value = "input_data")
-    private String input_data;
+    @TableField(value = "table_no")
+    private String tableNo;
 
     /**
      * 图表类型
      */
     @TableField(value = "chart_type")
-    private String chart_type;
+    private String chartType;
 
     /**
      * 分析结论
      */
     @TableField(value = "analysis_result")
-    private String analysis_result;
+    private String analysisResult;
 
     /**
      * 结果数据
      */
     @TableField(value = "result_data")
-    private String result_data;
+    private String resultData;
+
+    /**
+     * 图表状态
+     */
+    @TableField(value = "chart_status")
+    private Integer chartStatus;
 
     /**
      * 创建人
      */
     @TableField(value = "create_user")
-    private String create_user;
+    private String createUser;
 
     /**
      * 更新人
      */
     @TableField(value = "update_user")
-    private String update_user;
+    private String updateUser;
 
     /**
      * 创建时间
      */
     @TableField(value = "create_time")
-    private Date create_time;
+    private Date createTime;
 
     /**
      * 更新时间
      */
     @TableField(value = "update_time")
-    private Date update_time;
+    private Date updateTime;
 
     /**
      * 数据状态
      */
     @TableField(value = "status")
     private String status;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }
