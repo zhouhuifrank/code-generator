@@ -7,4 +7,12 @@ package com.frankzhou.common.util;
  * @date 2024-03-11
  */
 public class HttpUtil {
+
+    public static String doHttpGet() {
+        return null;
+    }
+
+    public static String doHttpPost() {
+        return null;
+    }
 }

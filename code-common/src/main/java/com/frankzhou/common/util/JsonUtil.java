@@ -2,7 +2,7 @@ package com.frankzhou.common.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,6 +52,26 @@ public class JsonUtil {
     public static <T> String toJsonStr(T object) {
         try {
             return objectMapper.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            log.warn("json解析错误 errorMsg:{}", e.getMessage());
+        }
+
+        return null;
+    }
+
+    public static JsonNode toJsonNode(String jsonStr) {
+        try {
+            return objectMapper.readTree(jsonStr);
+        } catch (JsonProcessingException e) {
+            log.warn("json解析错误 errorMsg:{}", e.getMessage());
+        }
+
+        return null;
+    }
+
+    public static <T> T nodeToValue(JsonNode jsonNode, Class<T> clazz) {
+        try {
+            return objectMapper.treeToValue(jsonNode, clazz);
         } catch (JsonProcessingException e) {
             log.warn("json解析错误 errorMsg:{}", e.getMessage());
         }
