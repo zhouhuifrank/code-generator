@@ -40,6 +40,7 @@ public class ReliableMessageRecord implements Serializable {
 
     /**
      * 消息状态
+     * @see com.frankzhou.intelligence.bi.domain.enums.MessageStatusEnum
      */
     @TableField(value = "message_status")
     private Integer messageStatus;
