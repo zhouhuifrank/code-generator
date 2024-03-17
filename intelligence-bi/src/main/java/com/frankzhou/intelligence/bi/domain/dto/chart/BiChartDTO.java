@@ -1,9 +1,7 @@
 package com.frankzhou.intelligence.bi.domain.dto.chart;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.frankzhou.common.base.BaseDTO;
+import lombok.*;
 
 /**
  * @author This.FrankZhou
@@ -15,7 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BiChartDTO {
+@EqualsAndHashCode(callSuper = false)
+public class BiChartDTO extends BaseDTO {
 
     private String chartNo;
 

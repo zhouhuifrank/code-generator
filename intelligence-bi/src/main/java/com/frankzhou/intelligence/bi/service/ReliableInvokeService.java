@@ -3,10 +3,7 @@ package com.frankzhou.intelligence.bi.service;
 import com.frankzhou.common.base.ApiResultDTO;
 import com.frankzhou.common.base.DeleteRequest;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;
-import com.frankzhou.intelligence.bi.domain.entity.ReliableMessageRecord;
-import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.sql.ResultSetMetaData;
 import java.util.List;
 
 /**

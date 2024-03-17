@@ -9,4 +9,8 @@ package com.frankzhou.intelligence.bi.constants;
 public class IntelligenceBiConstant {
 
     public static final double RECORD_RETRY_INTERVAL = 2d;
+
+    public static final String SORT_ASC = "ASC";
+
+    public static final String SORT_DESC = "DESC";
 }
