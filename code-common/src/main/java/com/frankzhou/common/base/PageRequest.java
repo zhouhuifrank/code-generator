@@ -17,25 +17,25 @@ public class PageRequest implements Serializable {
     /**
      * 当前页数(前端)
      */
-    private Integer currPage;
+    protected Integer currPage;
 
     /**
      * 开始行数(后端)
      */
-    private Integer startRow;
+    protected Integer startRow;
 
     /**
      * 页面大小(前端+后端)
      */
-    private Integer pageSize;
+    protected Integer pageSize;
 
     /**
      * 排序字段
      */
-    private String orderBy;
+    protected String orderBy;
 
     /**
      * 顺序 asc升序/desc降序
      */
-    private String sort;
+    protected String sort;
 }
