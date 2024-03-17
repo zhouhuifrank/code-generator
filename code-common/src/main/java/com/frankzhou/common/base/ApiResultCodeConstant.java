@@ -41,6 +41,7 @@ public class ApiResultCodeConstant {
 
     public static final ApiResultCodeDTO TOKEN_IS_EXPIRED = new ApiResultCodeDTO(412,"jwt token has expired","token过期失效");
 
+    public static final ApiResultCodeDTO DELETE_ID_NULL = new ApiResultCodeDTO(413, "delete id is not null", "id 不能为空");
     // 数据库相关错误码
 
     public static final ApiResultCodeDTO DB_QUERY_NO_DATA = new ApiResultCodeDTO(601,"database query no data","数据库查询无此数据");
