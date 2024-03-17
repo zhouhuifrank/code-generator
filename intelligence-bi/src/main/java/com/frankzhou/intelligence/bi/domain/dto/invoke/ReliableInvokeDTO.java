@@ -1,4 +1,4 @@
-package com.frankzhou.intelligence.bi.domain.dto;
+package com.frankzhou.intelligence.bi.domain.dto.invoke;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

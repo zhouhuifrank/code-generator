@@ -12,6 +12,7 @@
             <result property="nextRetryTime" column="next_retry_time" jdbcType="TIMESTAMP"/>
             <result property="retryCount" column="retry_count" jdbcType="TINYINT"/>
             <result property="maxRetryCount" column="max_retry_count" jdbcType="TINYINT"/>
+            <result property="executor" column="executor" jdbcType="VARCHAR"/>
             <result property="failReason" column="fail_reason" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
@@ -20,7 +21,7 @@
 
     <sql id="Base_Column_List">
         id,message_type,message_json,message_status,next_retry_time,retry_count,
-        max_retry_count,fail_reason,create_time,update_time,status
+        max_retry_count,executor,fail_reason,create_time,update_time,status
     </sql>
 
 </mapper>

@@ -64,6 +64,12 @@ public class ReliableMessageRecord implements Serializable {
     private Integer maxRetryCount;
 
     /**
+     * 异步执行线程池
+     */
+    @TableField(value = "executor")
+    private String executor;
+
+    /**
      * 失败原因
      */
     @TableField(value = "fail_reason")

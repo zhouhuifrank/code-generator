@@ -1,20 +1,23 @@
 package com.frankzhou.intelligence.bi.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.frankzhou.intelligence.bi.domain.entity.User;
+import com.frankzhou.intelligence.bi.dao.UserDao;
 import com.frankzhou.intelligence.bi.service.UserService;
-import com.frankzhou.intelligence.bi.mapper.UserMapper;
+import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
-* @author 22806
-* @description 针对表【user】的数据库操作Service实现
-* @createDate 2024-03-11 21:55:19
-*/
+ * @author This.FrankZhou
+ * @version 1.0
+ * @description 用户登录注册及用户管理service层实现类
+ * @date 2024-03-16
+ */
+@Slf4j
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User>
-    implements UserService{
+public class UserServiceImpl implements UserService {
 
+    @Resource
+    private UserDao userDao;
 }
 
 

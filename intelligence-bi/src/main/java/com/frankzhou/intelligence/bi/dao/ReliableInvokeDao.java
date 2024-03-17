@@ -2,9 +2,10 @@ package com.frankzhou.intelligence.bi.dao;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.frankzhou.common.enums.DataStatusEnum;
+import com.frankzhou.common.util.DateUtil;
 import com.frankzhou.common.util.JsonUtil;
-import com.frankzhou.intelligence.bi.domain.dto.ReliableInvokeDTO;
-import com.frankzhou.intelligence.bi.domain.dto.ReliableMessageRecordDTO;
+import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableInvokeDTO;
+import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;
 import com.frankzhou.intelligence.bi.domain.entity.ReliableMessageRecord;
 import com.frankzhou.intelligence.bi.domain.enums.MessageStatusEnum;
 import com.frankzhou.intelligence.bi.mapper.ReliableMessageRecordMapper;
@@ -28,7 +29,11 @@ public class ReliableInvokeDao extends ServiceImpl<ReliableMessageRecordMapper, 
         ReliableInvokeDTO reliableInvokeDTO = recordDTO.getReliableInvokeDTO();
         String messageJson = JsonUtil.toJsonStr(reliableInvokeDTO);
         messageRecord.setMessageJson(messageJson);
-        return this.save(messageRecord);
+        messageRecord.setStatus(DataStatusEnum.NORMAL.getCode());
+        boolean success = this.save(messageRecord);
+        // 将返回回来的自增id赋值给messageRecordDTO
+        recordDTO.setId(messageRecord.getId());
+        return success;
     }
 
     public boolean updateRecord(ReliableMessageRecordDTO recordDTO) {
@@ -44,16 +49,17 @@ public class ReliableInvokeDao extends ServiceImpl<ReliableMessageRecordMapper, 
         return this.removeById(id);
     }
 
+    public boolean batchDelete(List<Long> idList) {
+        return removeBatchByIds(idList);
+    }
+
     /**
      * 查询处于待发送和异常状态的消息，并且已经到达下次重试时间
      */
     public List<ReliableMessageRecordDTO> queryWaitingMessage() {
         // 下次重试时间<=当前时间 创建时间<=两分钟前 避免刚插入的消息立即被取出
         Date nowTime = new Date();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(nowTime);
-        calendar.add(Calendar.MINUTE, -2);
-        Date afterTime = calendar.getTime();
+        Date afterTime = DateUtil.addMinutes(nowTime, -2);
         List<Integer> messageStatusList = Arrays.asList(MessageStatusEnum.SEND_BEFORE.getCode(), MessageStatusEnum.EXCEPTION.getCode());
         List<ReliableMessageRecord> recordList = lambdaQuery()
                 .le(ReliableMessageRecord::getNextRetryTime, nowTime)
@@ -72,5 +78,18 @@ public class ReliableInvokeDao extends ServiceImpl<ReliableMessageRecordMapper, 
             waitingMessageList.add(recordDTO);
         });
         return waitingMessageList;
+    }
+
+    /**
+     * 查询已经被标记为删除 7天前被删除的
+     */
+    public List<ReliableMessageRecord> queryDeletedRecord() {
+        Date beforeDate = DateUtil.addDays(new Date(), -7);
+        List<ReliableMessageRecord> recordList = lambdaQuery()
+                .eq(ReliableMessageRecord::getMessageStatus, MessageStatusEnum.SUCCESS.getCode())
+                .eq(ReliableMessageRecord::getStatus, DataStatusEnum.DELETED.getCode())
+                .le(ReliableMessageRecord::getCreateTime, beforeDate)
+                .list();
+        return recordList;
     }
 }

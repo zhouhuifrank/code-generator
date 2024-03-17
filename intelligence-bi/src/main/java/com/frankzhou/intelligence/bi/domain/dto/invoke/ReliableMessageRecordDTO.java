@@ -1,11 +1,11 @@
-package com.frankzhou.intelligence.bi.domain.dto;
+package com.frankzhou.intelligence.bi.domain.dto.invoke;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.frankzhou.common.base.BaseDTO;
+import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableInvokeDTO;
+import lombok.*;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author This.FrankZhou
@@ -17,7 +17,8 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReliableMessageRecordDTO {
+@EqualsAndHashCode(callSuper = false)
+public class ReliableMessageRecordDTO extends BaseDTO {
 
     private String messageType;
 
@@ -31,5 +32,8 @@ public class ReliableMessageRecordDTO {
 
     private Integer maxRetryCount;
 
+    private String executor;
+
     private String failReason;
+
 }

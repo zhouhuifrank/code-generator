@@ -37,6 +37,7 @@
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
+			<version>${huttol.version}</version>
 		</dependency>
 	</dependencies>
 
