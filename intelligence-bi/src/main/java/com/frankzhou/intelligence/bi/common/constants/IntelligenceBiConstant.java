@@ -1,4 +1,4 @@
-package com.frankzhou.intelligence.bi.constants;
+package com.frankzhou.intelligence.bi.common.constants;
 
 /**
  * @author This.FrankZhou
