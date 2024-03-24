@@ -4,6 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author This.FrankZhou
+ * @version 1.0
+ * @description 实时数据同步平台
+ * @date 2024-03-24
+ */
 @Slf4j
 @SpringBootApplication
 public class DataSyncApplication {

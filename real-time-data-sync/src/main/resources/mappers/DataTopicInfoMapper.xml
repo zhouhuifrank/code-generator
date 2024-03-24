@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.data.sync.mapper.DataTopicInfoMapper">
+
+    <resultMap id="topicMap" type="com.frankzhou.data.sync.domain.entity.DataTopicInfo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="topicName" column="topic_name" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="partitionNum" column="partition_num" jdbcType="SMALLINT"/>
+            <result property="replicationNum" column="replication_num" jdbcType="SMALLINT"/>
+            <result property="lifecycle" column="lifecycle" jdbcType="SMALLINT"/>
+            <result property="allowExpand" column="allow_expand" jdbcType="TINYINT"/>
+            <result property="cleanupPolicy" column="cleanup_policy" jdbcType="VARCHAR"/>
+            <result property="msgDataType" column="msg_data_type" jdbcType="VARCHAR"/>
+            <result property="sourceDatabaseType" column="source_database_type" jdbcType="VARCHAR"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseColumn">
+        id,topic_name,description,partition_num,replication_num,lifecycle,allow_expand,cleanup_policy,
+        msg_data_type,source_database_type,create_user,update_user,create_time,update_time,status
+    </sql>
+</mapper>
