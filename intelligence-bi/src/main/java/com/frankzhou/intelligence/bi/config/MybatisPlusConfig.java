@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2024-03-17
  */
 @Configuration
-@MapperScan(basePackages = "com.frankzhou.intelligence.bi.mapper")
 public class MybatisPlusConfig {
 
     /**

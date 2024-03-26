@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.frankzhou.intelligence.bi.mapper.BiDataMapper">
 
-    <resultMap id="BaseResultMap" type="com.frankzhou.intelligence.bi.domain.entity.BiData">
+    <resultMap id="dataMap" type="com.frankzhou.intelligence.bi.domain.entity.BiData">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="tableNo" column="table_no" jdbcType="VARCHAR"/>
             <result property="tableNameEn" column="table_name_en" jdbcType="VARCHAR"/>
@@ -18,7 +18,7 @@
             <result property="status" column="status" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
+    <sql id="baseColumn">
         id,table_no,table_name_en,table_name_cn,data_file_no,import_status,
         create_user,update_user,create_time,update_time,status
     </sql>

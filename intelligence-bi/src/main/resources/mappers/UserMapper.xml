@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.frankzhou.intelligence.bi.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.frankzhou.intelligence.bi.domain.entity.User">
+    <resultMap id="userMap" type="com.frankzhou.intelligence.bi.domain.entity.User">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="userName" column="user_name" jdbcType="VARCHAR"/>
@@ -20,7 +20,7 @@
             <result property="status" column="status" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
+    <sql id="baseColumn">
         id,user_id,user_name,password,phone,avatar,gender,email,
         create_user,update_user,create_time,update_time,status
     </sql>

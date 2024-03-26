@@ -16,4 +16,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BiChartVO {
+
+    private Long id;
 }

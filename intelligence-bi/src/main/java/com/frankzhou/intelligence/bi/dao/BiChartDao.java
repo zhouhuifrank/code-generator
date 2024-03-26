@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.frankzhou.common.base.ApiPageResultDTO;
-import com.frankzhou.intelligence.bi.constants.IntelligenceBiConstant;
+import com.frankzhou.intelligence.bi.common.constants.IntelligenceBiConstant;
 import com.frankzhou.intelligence.bi.domain.dto.chart.BiChartDTO;
 import com.frankzhou.intelligence.bi.domain.dto.chart.BiChartQueryDTO;
 import com.frankzhou.intelligence.bi.domain.entity.BiChart;

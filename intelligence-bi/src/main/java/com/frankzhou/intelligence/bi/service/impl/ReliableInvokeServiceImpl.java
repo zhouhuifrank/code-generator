@@ -8,7 +8,7 @@ import com.frankzhou.common.enums.DataStatusEnum;
 import com.frankzhou.common.exception.BusinessException;
 import com.frankzhou.common.util.DateUtil;
 import com.frankzhou.common.util.JsonUtil;
-import com.frankzhou.intelligence.bi.constants.IntelligenceBiConstant;
+import com.frankzhou.intelligence.bi.common.constants.IntelligenceBiConstant;
 import com.frankzhou.intelligence.bi.dao.ReliableInvokeDao;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableInvokeDTO;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;

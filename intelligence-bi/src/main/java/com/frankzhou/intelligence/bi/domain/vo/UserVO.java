@@ -16,4 +16,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserVO {
+
+    private Long id;
 }
