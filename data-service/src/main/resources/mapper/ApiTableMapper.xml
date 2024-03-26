@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.api.mapper.ApiTableMapper">
+
+    <resultMap id="tableMap" type="com.frankzhou.api.domain.entity.ApiTable">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="datasourceId" column="datasource_id" jdbcType="BIGINT"/>
+            <result property="tableId" column="table_id" jdbcType="BIGINT"/>
+            <result property="tableNameEn" column="table_name_en" jdbcType="VARCHAR"/>
+            <result property="tableNameCn" column="table_name_cn" jdbcType="VARCHAR"/>
+            <result property="tableDesc" column="table_desc" jdbcType="VARCHAR"/>
+            <result property="renewalFrequency" column="renewal_frequency" jdbcType="INTEGER"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseColumn">
+        id,datasource_id,table_id,table_name_en,table_name_cn,
+        table_desc,renewal_frequency,
+        create_user,update_user,create_time,update_time,status
+    </sql>
+
+</mapper>

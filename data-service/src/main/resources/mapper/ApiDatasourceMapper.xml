@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.api.mapper.ApiDatasourceMapper">
+
+    <resultMap id="datasourceMap" type="com.frankzhou.api.domain.entity.ApiDatasource">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="datasourceId" column="datasource_id" jdbcType="BIGINT"/>
+            <result property="datasourceName" column="datasource_name" jdbcType="VARCHAR"/>
+            <result property="dbType" column="db_type" jdbcType="VARCHAR"/>
+            <result property="connectIp" column="connect_ip" jdbcType="VARCHAR"/>
+            <result property="connectUrl" column="connect_url" jdbcType="VARCHAR"/>
+            <result property="connectUser" column="connect_user" jdbcType="VARCHAR"/>
+            <result property="connectPassword" column="connect_password" jdbcType="VARCHAR"/>
+            <result property="dbDesc" column="db_desc" jdbcType="VARCHAR"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseColumn">
+        id,datasource_id,datasource_name,db_type,connect_ip,
+        connect_url,connect_user,connect_password,db_desc,
+        create_user,update_user,create_time,update_time,status
+    </sql>
+
+</mapper>
