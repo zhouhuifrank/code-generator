@@ -73,6 +73,18 @@ public class ApiColumn implements Serializable {
     private Integer dataPrecision;
 
     /**
+     * 是否为主键字段
+     */
+    @TableField(value = "key_flag")
+    private Integer keyFlag;
+
+    /**
+     * 是否为索引字段
+     */
+    @TableField(value = "index_flag")
+    private Integer indexFlag;
+
+    /**
      * 创建人
      */
     @TableField(value = "create_user")
