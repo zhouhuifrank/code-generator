@@ -1,6 +1,8 @@
 package com.frankzhou.data.sync;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2024-03-24
  */
 @Slf4j
+@MapperScan(basePackages = "com.frankzhou.data.sync.mapper")
 @SpringBootApplication
 public class DataSyncApplication {
 

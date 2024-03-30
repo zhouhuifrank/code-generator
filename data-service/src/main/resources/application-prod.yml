@@ -45,6 +45,24 @@ spring:
         login-username: admin
         login-password: admin
 
+  data:
+    redis:
+      enabled: true
+      host: 115.159.216.169
+      port: 6379
+      password: monv205850
+      database: 0
+      lettuce:
+        pool:
+          # 最大连接数
+          max-active: 8
+          # 最大空闲连接
+          max-idle: 8
+          # 最小空闲连接
+          min-idle: 0
+          # 连接等待时间
+          max-wait: 100ms
+
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER

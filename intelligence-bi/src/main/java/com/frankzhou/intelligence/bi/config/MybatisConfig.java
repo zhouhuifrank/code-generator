@@ -18,7 +18,6 @@ import javax.sql.DataSource;
  * @date 2024-03-26
  */
 @Configuration
-@MapperScan(basePackages = "com.frankzhou.api.mapper")
 public class MybatisConfig {
 
     @Resource
