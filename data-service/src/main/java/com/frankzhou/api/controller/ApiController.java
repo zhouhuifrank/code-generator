@@ -1,5 +1,10 @@
 package com.frankzhou.api.controller;
 
+import com.frankzhou.api.domain.entity.ApiExecuteSql;
+import com.frankzhou.api.service.ApiExecuteSqlService;
+import com.frankzhou.api.service.ApiInfoService;
+import com.frankzhou.api.service.ApiParamConfigService;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,4 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
+
+    @Resource
+    private ApiInfoService apiInfoService;
+
+    @Resource
+    private ApiExecuteSqlService ExecuteSqlService;
+
+    @Resource
+    private ApiParamConfigService paramConfigService;
 }

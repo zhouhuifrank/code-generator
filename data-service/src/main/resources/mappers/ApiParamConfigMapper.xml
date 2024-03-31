@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.api.mapper.ApiParamConfigMapper">
+
+    <resultMap id="paramConfigMap" type="com.frankzhou.api.domain.entity.ApiParamConfig">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="apiId" column="api_id" jdbcType="BIGINT"/>
+            <result property="apiVersion" column="api_version" jdbcType="VARCHAR"/>
+            <result property="paramType" column="param_type" jdbcType="VARCHAR"/>
+            <result property="columnId" column="column_id" jdbcType="BIGINT"/>
+            <result property="columnName" column="column_name" jdbcType="VARCHAR"/>
+            <result property="columnNameAlis" column="column_name_alis" jdbcType="VARCHAR"/>
+            <result property="columnDataType" column="column_data_type" jdbcType="VARCHAR"/>
+            <result property="columnOperator" column="column_operator" jdbcType="VARCHAR"/>
+            <result property="columnExample" column="column_example" jdbcType="VARCHAR"/>
+            <result property="columnComment" column="column_comment" jdbcType="VARCHAR"/>
+            <result property="requiredIs" column="required_is" jdbcType="INTEGER"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseColumn">
+        id,api_id,api_version,param_type,column_id,`column_name`,
+        column_name_alis,column_data_type,column_operator,
+        column_example,column_comment,required_is,
+        create_user,update_user,create_time,update_time,status
+    </sql>
+
+</mapper>

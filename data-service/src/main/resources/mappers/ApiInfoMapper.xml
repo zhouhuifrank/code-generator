@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frankzhou.api.mapper.ApiInfoMapper">
+
+    <resultMap id="apiInfoMap" type="com.frankzhou.api.domain.entity.ApiInfo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="groupId" column="group_id" jdbcType="BIGINT"/>
+            <result property="apiId" column="api_id" jdbcType="BIGINT"/>
+            <result property="apiName" column="api_name" jdbcType="VARCHAR"/>
+            <result property="apiUrl" column="api_url" jdbcType="VARCHAR"/>
+            <result property="requestMethod" column="request_method" jdbcType="VARCHAR"/>
+            <result property="requestTimeout" column="request_timeout" jdbcType="INTEGER"/>
+            <result property="responseType" column="response_type" jdbcType="VARCHAR"/>
+            <result property="renewalFrequency" column="renewal_frequency" jdbcType="VARCHAR"/>
+            <result property="generateType" column="generate_type" jdbcType="VARCHAR"/>
+            <result property="authenticateType" column="authenticate_type" jdbcType="VARCHAR"/>
+            <result property="datasourceId" column="datasource_id" jdbcType="BIGINT"/>
+            <result property="datasourceName" column="datasource_name" jdbcType="VARCHAR"/>
+            <result property="tableId" column="table_id" jdbcType="BIGINT"/>
+            <result property="tableName" column="table_name" jdbcType="VARCHAR"/>
+            <result property="currentVersionIs" column="current_version_is" jdbcType="INTEGER"/>
+            <result property="apiVersion" column="api_version" jdbcType="VARCHAR"/>
+            <result property="apiStatus" column="api_status" jdbcType="VARCHAR"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="baseColumn">
+        id,group_id,api_id,api_name,api_url,request_method,
+        request_timeout,response_type,renewal_frequency,
+        generate_type,authenticate_type,datasource_id,
+        datasource_name,table_id,`table_name`,
+        current_version_is,api_version,api_status,
+        create_user,update_user,create_time,update_time,status
+    </sql>
+
+</mapper>

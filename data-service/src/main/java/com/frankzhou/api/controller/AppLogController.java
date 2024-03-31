@@ -1,5 +1,7 @@
 package com.frankzhou.api.controller;
 
+import com.frankzhou.api.service.AppLogService;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,4 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/log")
 public class AppLogController {
+
+    @Resource
+    private AppLogService appLogService;
 }

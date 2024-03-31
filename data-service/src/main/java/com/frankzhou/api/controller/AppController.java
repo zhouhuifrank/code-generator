@@ -1,5 +1,8 @@
 package com.frankzhou.api.controller;
 
+import com.frankzhou.api.service.AppApiService;
+import com.frankzhou.api.service.AppInfoService;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,4 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/app")
 public class AppController {
+
+    @Resource
+    private AppInfoService appInfoService;
+
+    @Resource
+    private AppApiService appApiService;
 }
