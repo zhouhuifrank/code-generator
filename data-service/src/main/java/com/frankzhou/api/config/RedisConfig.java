@@ -1,7 +1,6 @@
 package com.frankzhou.api.config;
 
 import cn.hutool.core.collection.CollectionUtil;
-import jakarta.annotation.Resource;
 import org.redisson.spring.cache.CacheConfigSupport;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -17,6 +16,7 @@ import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
+import javax.annotation.Resource;
 import java.util.Objects;
 
 /**

@@ -3,8 +3,6 @@ package com.frankzhou.api.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewFilter;
 import com.alibaba.druid.support.http.StatViewServlet;
-import jakarta.servlet.Filter;
-import jakarta.servlet.Servlet;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -32,21 +30,21 @@ public class DruidConfig {
     }
 
     // druid监控访问网址 http://localhost:8080/dataService/druid/login.html
-//    @Bean
-//    public ServletRegistrationBean druidServlet(){
-//        ServletRegistrationBean bean = new ServletRegistrationBean((Servlet) new StatViewServlet(),"/druid/*");
-//        bean.addInitParameter("allow","");
-//        bean.addInitParameter("resetEnable","false");
-//        bean.addInitParameter("loginUsername","admin");
-//        bean.addInitParameter("loginPassword","admin");
-//        return bean;
-//    }
-//
-//    @Bean
-//    public FilterRegistrationBean statFilter(){
-//        FilterRegistrationBean bean = new FilterRegistrationBean((Filter) new StatViewFilter());
-//        bean.addUrlPatterns("/*");
-//        bean.addInitParameter("exclusions","*.js,*.gif,/druid/*");
-//        return bean;
-//    }
+    @Bean
+    public ServletRegistrationBean druidServlet(){
+        ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
+        bean.addInitParameter("allow","");
+        bean.addInitParameter("resetEnable","false");
+        bean.addInitParameter("loginUsername","admin");
+        bean.addInitParameter("loginPassword","admin");
+        return bean;
+    }
+
+    @Bean
+    public FilterRegistrationBean statFilter(){
+        FilterRegistrationBean bean = new FilterRegistrationBean(new StatViewFilter());
+        bean.addUrlPatterns("/*");
+        bean.addInitParameter("exclusions","*.js,*.gif,/druid/*");
+        return bean;
+    }
 }

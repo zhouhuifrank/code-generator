@@ -3,8 +3,9 @@ package com.frankzhou.api.dao;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.frankzhou.api.domain.entity.ApiColumn;
 import com.frankzhou.api.mapper.ApiColumnMapper;
-import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author This.FrankZhou
