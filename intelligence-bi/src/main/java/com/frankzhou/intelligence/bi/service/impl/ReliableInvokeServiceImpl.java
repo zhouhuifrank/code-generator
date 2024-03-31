@@ -14,12 +14,12 @@ import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableInvokeDTO;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;
 import com.frankzhou.intelligence.bi.domain.enums.MessageStatusEnum;
 import com.frankzhou.intelligence.bi.service.ReliableInvokeService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionSynchronization;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.List;

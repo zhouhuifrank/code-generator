@@ -45,9 +45,9 @@ spring:
         login-username: admin
         login-password: admin
 
-  mvc:
-    pathmatch:
-      matching-strategy: ANT_PATH_MATCHER
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
 
 mybatis-plus:
   configuration:
@@ -59,3 +59,6 @@ mybatis-plus:
       logic-delete-value: "DELETED" # 逻辑已删除值(默认为 1)
       logic-not-delete-value: "NORMAL" # 逻辑未删除值(默认为 0)
   mapper-locations: classpath:mappers/*.xml
+
+knife4j:
+  enabled: false

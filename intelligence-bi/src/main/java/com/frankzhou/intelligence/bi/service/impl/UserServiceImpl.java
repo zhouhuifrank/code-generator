@@ -2,9 +2,10 @@ package com.frankzhou.intelligence.bi.service.impl;
 
 import com.frankzhou.intelligence.bi.dao.UserDao;
 import com.frankzhou.intelligence.bi.service.UserService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author This.FrankZhou

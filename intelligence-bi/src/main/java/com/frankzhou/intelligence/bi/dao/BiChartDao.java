@@ -12,10 +12,10 @@ import com.frankzhou.intelligence.bi.domain.dto.chart.BiChartDTO;
 import com.frankzhou.intelligence.bi.domain.dto.chart.BiChartQueryDTO;
 import com.frankzhou.intelligence.bi.domain.entity.BiChart;
 import com.frankzhou.intelligence.bi.mapper.BiChartMapper;
-import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 

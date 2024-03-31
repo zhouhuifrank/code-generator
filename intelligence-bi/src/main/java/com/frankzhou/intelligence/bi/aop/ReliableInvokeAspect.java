@@ -6,7 +6,6 @@ import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableInvokeDTO;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;
 import com.frankzhou.intelligence.bi.domain.enums.MessageStatusEnum;
 import com.frankzhou.intelligence.bi.service.ReliableInvokeService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -18,6 +17,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.stream.Collectors;

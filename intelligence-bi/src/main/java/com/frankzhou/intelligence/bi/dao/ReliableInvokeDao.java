@@ -12,6 +12,7 @@ import com.frankzhou.intelligence.bi.mapper.ReliableMessageRecordMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -25,6 +26,9 @@ import java.util.List;
  */
 @Component
 public class ReliableInvokeDao extends ServiceImpl<ReliableMessageRecordMapper, ReliableMessageRecord> {
+
+    @Resource
+    private ReliableMessageRecordMapper messageRecordMapper;
 
     public boolean saveRecord(ReliableMessageRecordDTO recordDTO) {
         ReliableMessageRecord messageRecord = new ReliableMessageRecord();

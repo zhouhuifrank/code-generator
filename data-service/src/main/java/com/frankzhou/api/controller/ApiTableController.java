@@ -2,9 +2,10 @@ package com.frankzhou.api.controller;
 
 import com.frankzhou.api.service.ApiColumnService;
 import com.frankzhou.api.service.ApiTableService;
-import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author This.FrankZhou

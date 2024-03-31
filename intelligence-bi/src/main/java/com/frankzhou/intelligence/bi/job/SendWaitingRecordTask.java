@@ -1,17 +1,15 @@
 package com.frankzhou.intelligence.bi.job;
 
-import com.frankzhou.common.base.ApiResultDTO;
 import com.frankzhou.intelligence.bi.dao.ReliableInvokeDao;
 import com.frankzhou.intelligence.bi.domain.dto.invoke.ReliableMessageRecordDTO;
 import com.frankzhou.intelligence.bi.domain.entity.ReliableMessageRecord;
 import com.frankzhou.intelligence.bi.service.ReliableInvokeService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
